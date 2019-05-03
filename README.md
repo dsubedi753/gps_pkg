@@ -20,7 +20,7 @@ This package has following dependency
   sensor_msgs
   
 Permission needed to be granted as following:
->> sudo chmod 777 /dev/ttyUSB0
+> sudo chmod 777 /dev/ttyUSB0
 
 Expected error and required steps to solve them:
 The GPS outputs msgs in different baud rate. We can change the baud rate as the parameter in the launch file.
