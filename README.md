@@ -19,7 +19,7 @@ http://wiki.ros.org/nmea_navsat_driver
   rospy
   sensor_msgs
   
-**Permission needed to be granted as following:*
+**Permission needed to be granted as following:**
 > sudo chmod 777 /dev/ttyUSB0
 
 **Output of the program:**
