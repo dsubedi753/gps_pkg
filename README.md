@@ -56,4 +56,4 @@ The package will not output the data if the harware is not given the correct per
 **Running the package**  
 Open Terminal  
 Type in the following code  
-> roslaunch gps_pkg gps_pkg.launch
+> roslaunch gps_pkg gps.launch
