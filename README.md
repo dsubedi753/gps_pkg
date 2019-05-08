@@ -4,9 +4,10 @@ Final Project for ENGR 339 (ROS)
 
 **Used Hardware:**  
 Cresent A1000
+https://hemispheregnss.com/Portals/0/TechnicalDocumentation/A100_User_Guide_8750163000_RevC1.pdf
 
-**Connection of Hardware:**  
-The GPS is connected using standard USB connection. The hardware shows up as /dev/ttyUSB0
+**Installation:**  
+The Cresent A1000 need 12V DC supply for the operation. The hardware is connected using standard USB connection. The hardware shows up as /dev/ttyUSB0.
 
 **Source of the scripts:**  
 http://wiki.ros.org/nmea_navsat_driver
@@ -18,9 +19,6 @@ http://wiki.ros.org/nmea_navsat_driver
   roslint  
   rospy  
   sensor_msgs  
-  
-**Permission needed to be granted as following:**  
-> sudo chmod 777 /dev/ttyUSB0  
   
 **Output of the program:**  
 The program publishes the output in the topic /fix in **nmea_msgs** format  
@@ -48,4 +46,14 @@ http://docs.ros.org/api/nmea_msgs/html/msg/Sentence.html
 
 
 **Expected error and required steps to solve them:**  
-The GPS outputs msgs in different baud rate. We can change the baud rate as the parameter in the launch file.
+The GPS outputs msgs in different and discrete baud rate. If the input baud rate at which the script is executed doesn't match the baud rate of the hardware, the program outputs nothing or erroneous information. We can change the baud rate as the parameter in the launch file.
+
+The package will not output the data if the harware is not given the correct permission. We can used given command to specify the permission to access the hardware. 
+
+**Permission needed to be granted as following:**  
+> sudo chmod 777 /dev/ttyUSB0  
+
+**Running the package**
+Open Terminal
+Type in the following code
+> roslaunch gps_pkg gps_pkg.launch
